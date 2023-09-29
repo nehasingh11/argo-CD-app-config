@@ -7,16 +7,16 @@ spec:
   project: default
 
   source:
-    repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
+    repoURL: https://github.com/nehasingh11/argo-CD-app-config
     targetRevision: HEAD
-    path: dev
-  destination: 
-    server: https://kubernetes.default.svc
+    path: ./
+  destination:
+    server: https://10.0.0.5:6443
     namespace: myapp
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
 
     automated:
       selfHeal: true
